@@ -4,47 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>List Pemain Bola - Rizky Fabian</title>
-  <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="layaout.css">
+  <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="komponen.css">
   <link rel="stylesheet" href="tema.css">
 </head>
 <body>
 
   <header>
-  <!-- Elemen Video Background -->
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="neymar.mp4" type="video/mp4">
-    Browser Anda tidak mendukung tag video.
-  </video>
+    <!-- Elemen Video Background -->
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="neymar.mp4" type="video/mp4">
+      Browser Anda tidak mendukung tag video.
+    </video>
 
-  <!-- Konten Header (Judul dan Navigasi) -->
-  <div class="header-content">
-    <h1>List Pemain Bola</h1>
-    <nav>
-      <ul>
-        <li><a href="#daftar-pemain">Daftar Pemain</a></li>
-        <li><a href="#tambah-pemain">Tambah Pemain</a></li>
-        <li><a href="#tentang-saya">Tentang Saya</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <!-- Konten Header (Judul dan Navigasi) -->
+    <div class="header-content">
+      <h1>List Pemain Bola</h1>
+      <nav>
+        <ul>
+          <li><a href="#daftar-pemain">Daftar Pemain</a></li>
+          <li><a href="#tambah-pemain">Tambah Pemain</a></li>
+          <li><a href="#tentang-saya">Tentang Saya</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
     
     <section id="daftar-pemain">
       <h2>Daftar Pemain Bola Favorit</h2>
       
-      <div class="slider-container">
-  <div class="slider-track">
-    <img src="Alll.jpg" alt="Messi">
-    <img src="all2.jpg" alt="De Bruyne">
-    <img src="all3.jpg" alt="Neymar">
-  </div>
-</div>
-<figcaption>Gambar 1.1: Pemain bola andalan di klub.</figcaption>
+      <figure>
+        <div class="slider-container">
+          <div class="slider-track">
+            <img src="Alll.jpg" alt="Messi">
+            <img src="all2.jpg" alt="De Bruyne">
+            <img src="all3.jpg" alt="Neymar">
+          </div>
+        </div>
+        <figcaption>Gambar 1.1: Pemain bola andalan di klub.</figcaption>
+      </figure>
 
       <table>
         <caption>Tabel Koleksi Pemain Bola Favorit</caption>
@@ -104,6 +106,11 @@
 
         <button type="submit">Simpan Pemain</button>
       </form>
+    </section>
+
+    <section id="tentang-saya">
+      <h2>Tentang Saya</h2>
+      <p>Halaman ini dikembangkan oleh Rizky Fabian (NIM: 25523208).</p>
     </section>
 
   </main>

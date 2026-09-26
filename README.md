@@ -18,18 +18,23 @@ Topik halaman saya: daftar pemain bola favorit.
  
 AI membantu dalam menyusun ide tema pemain bola serta menyesuaikan struktur teks pada README.md.
 
-## Pertemuan 4 — Styling CSS pada Halaman Profil
+## Pertemuan 4 — Design token halaman profil
 
-Topik halaman saya: daftar pemain bola favorit dengan penerapan CSS eksternal.
+- Berkas gaya yang akan dibuat: tokens.css, base.css, layout.css, komponen.css, tema.css
+- Warna utama: #1e3a8a (biru gelap), dipilih karena memberikan kontras yang sangat baik (rasio > 12:1) serta tampilan yang profesional dan nyaman dibaca.
 
-- Judul halaman: List Pemain Bola[cite: 1]
-- Deskripsi: Daftar pemain bola favorit beserta klub, status, dan foto yang ditata menggunakan CSS[cite: 1]
-- Tautan navigasi: Daftar Pemain, Tambah Pemain, Tentang Saya[cite: 1]
-- Dua bagian utama: Daftar Pemain, Tambah Pemain[cite: 1]
-- Kolom tabel: foto, nama pemain, posisi, klub, status[cite: 1]
-- Kolom form: nama pemain, posisi, klub[cite: 1]
-- Berkas pendukung: style.css, pemain-1.webp, messi.webp, kdb.webp, vandijk.webp[cite: 1]
+### Token yang saya tetapkan
 
-## Catatan penggunaan AI
+| Token | Nilai | Untuk apa |
+|---|---|---|
+| `--color-primary` | `#1e3a8a` | tombol, tautan, penanda |
+| `--color-fg` | `#1e293b` | warna teks utama |
+| `--color-bg` | `#f8fafc` | latar halaman |
+| `--color-surface` | `#ffffff` | latar kartu dan panel |
+| `--color-border` | `#d1d5db` | garis pemisah dan tepi kotak |
+| `--color-danger` | `#b00020` | peringatan dan isian yang tidak sah |
+| `--color-focus` | `#2563eb` | garis fokus papan ketik |
+| `--radius-md` | `0.5rem` | sudut tombol dan kartu |
+| `--space-4` | `1rem` | jarak standar antar elemen |
 
-AI membantu dalam menyusun struktur kode CSS eksternal, penataan tata letak (layout) modern, serta penyesuaian teks pada README.md untuk Pertemuan 4.
+Kriteria selesai saya: mengubah `--color-primary` di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus.

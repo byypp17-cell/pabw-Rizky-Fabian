@@ -1,12 +1,29 @@
 :root {
-  --primary-color: #1e3a8a;
-  --secondary-color: #2563eb;
-  --accent-color: #10b981;
-  --bg-color: #f8fafc;
-  --text-color: #1e293b;
-  --card-bg: #ffffff;
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* Token Warna */
+  --color-bg: #f8fafc;
+  --color-fg: #1e293b;
+  --color-surface: #ffffff;
+  --color-border: #d1d5db;
+  --color-primary: #1e3a8a;
+  --color-primary-fg: #ffffff;
+  --color-danger: #b00020;
+  --color-focus: #2563eb;
+
+  /* Token Spacing / Jarak */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+
+  /* Token Radius & Shadow */
+  --radius-md: 0.5rem;
+  --radius-full: 999px;
+  --shadow-1: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  /* Token Ukuran Teks */
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-xl: 1.5rem;
+  --text-3xl: 2.25rem;
 }
