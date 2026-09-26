@@ -75,19 +75,23 @@
   --color-muted: #94a3b8;
 }
 
-/* 1. Paksa warna background dan teks utama */
-:root:has(#tema:checked) body {
-  background-color: var(--color-bg) !important;
-  color: var(--color-fg) !important;
+/* 1. Deklarasi nilai variable saat mode tema aktif */
+:root:has(#tema:checked) {
+  --color-bg: #121212;        /* sesuaikan dengan warna background gelap Anda */
+  --color-fg: #ffffff;        /* warna teks utama */
+  --color-heading: #ffffff;   /* warna judul */
+  --color-border: #333333;    /* warna border */
 }
 
-/* 2. Warna Judul (h1, h2, h3, h4) agar jelas dibaca */
-:root:has(#tema:checked) h1,
-:root:has(#tema:checked) h2,
-:root:has(#tema:checked) h3,
-:root:has(#tema:checked) h4 {
-  color: #ffffff !important;
-  border-bottom-color: var(--color-border) !important;
+/* 2. Style bawaan elemen (cukup ditulis sekali saja) */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-heading, var(--color-fg));
+  border-bottom-color: var(--color-border);
 }
 
 /* 3. Teks Keterangan Gambar (fig-caption / italic text) */

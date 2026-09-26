@@ -1,9 +1,6 @@
 /* LAPIS 1 — primitif: nilai mentah, tidak menyebut peran apa pun */
 :root {
-  --blue-700: #1e3a8a;
-  --blue-500: #2563eb;
-  --gray-50:  #f8fafc;
-  --gray-900: #1e293b;
+  --color-primary: #2563eb; /* Warna utama web Anda */
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;

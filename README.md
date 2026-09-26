@@ -38,3 +38,13 @@ AI membantu dalam menyusun ide tema pemain bola serta menyesuaikan struktur teks
 | `--space-4` | `1rem` | jarak standar antar elemen |
 
 Kriteria selesai saya: mengubah `--color-primary` di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus.
+
+## Catatan penggunaan AI
+Dalam penyelesaian tugas Pertemuan 4 ini, saya menggunakan bantuan alat AI (Generative AI) sebagai rekan diskusi dan alat bantu pengerjaan dengan rincian sebagai berikut:
+
+
+Eksplorasi & Validasi Warna: Menggunakan AI untuk membantu menganalisis rasio kontras warna (contrast ratio) berdasarkan standar aksesibilitas WCAG, 
+
+serta memilih kombinasi warna (#1e3a8a, #1e293b, dll.) yang profesional dan aman dibaca.  
+
+ Penyusunan Structure & Syntax CSS: Meminta masukan dari AI dalam menyusun design tokens (variabel CSS), optimasi pemisahan berkas CSS (tokens.css, base.css, layout.css, dll.), serta cara implementasi penggantian tema tanpa menggunakan !important
