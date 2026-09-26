@@ -13,24 +13,24 @@
 <body>
 
   <header>
-    <!-- Elemen Video Background -->
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="neymar.mp4" type="video/mp4">
-      Browser Anda tidak mendukung tag video.
-    </video>
-
-    <!-- Konten Header (Judul dan Navigasi) -->
-    <div class="header-content">
+  <div class="header-content">
+    <!-- KIRI: Judul & Pengalih Tema -->
+    <div class="header-brand">
       <h1>List Pemain Bola</h1>
-      <nav>
-        <ul>
-          <li><a href="#daftar-pemain">Daftar Pemain</a></li>
-          <li><a href="#tambah-pemain">Tambah Pemain</a></li>
-          <li><a href="#tentang-saya">Tentang Saya</a></li>
-        </ul>
-      </nav>
+      <div class="theme-switch-wrapper">
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">🌙 Tema Gelap</label>
+      </div>
     </div>
-  </header>
+
+    <!-- KANAN: Navigasi Menu -->
+    <nav>
+      <a href="#daftar">Daftar Pemain</a>
+      <a href="#tambah">Tambah Pemain</a>
+      <a href="#tentang">Tentang Saya</a>
+    </nav>
+  </div>
+</header>
 
   <main>
     

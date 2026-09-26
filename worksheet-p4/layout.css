@@ -1,42 +1,86 @@
 /* ==========================================================================
-   LAYOUT: HEADER & NAVBAR STRUCTURE
+   HEADER & NAVBAR STYLING
    ========================================================================== */
 
-/* Area Utama Header */
 header {
-  position: relative;
-  width: 100%;
-  height: 320px;
+  background-color: #0f172a;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-bottom: 4px solid var(--color-primary);
-  box-shadow: var(--shadow-1);
+  justify-content: space-between; /* Menjaga Kiri dan Kanan Terpisah */
+  gap: 1.5rem;
 }
 
-/* Video Latar Belakang */
-.bg-video {
+/* Sisi Kiri: Judul & Tombol Tema */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-brand h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Pengalih Tema */
+.pengalih-tema {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  filter: brightness(0.45); /* Gelapkan video agar teks putih terlihat tajam */
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Wadah Kiri-Kanan (Judul & Navigasi) */
-header .header-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1100px;
-  padding-inline: var(--space-4);
-  display: flex !important;
-  justify-content: space-between !important; /* Judul di Kiri, Menu di Kanan */
-  align-items: center !important;
-  flex-wrap: wrap;
-  gap: var(--space-4);
+.tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tombol-tema:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sisi Kanan: Navigasi */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+header nav a {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Indikator Aktif Tombol Tema */
+:root:has(#tema:checked) .tombol-tema {
+  background-color: #2563eb;
+  border-color: #3b82f6;
 }
