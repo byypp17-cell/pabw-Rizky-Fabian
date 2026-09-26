@@ -1,29 +1,35 @@
+/* LAPIS 1 — primitif: nilai mentah, tidak menyebut peran apa pun */
 :root {
-  /* Token Warna */
-  --color-bg: #f8fafc;
-  --color-fg: #1e293b;
-  --color-surface: #ffffff;
-  --color-border: #d1d5db;
-  --color-primary: #1e3a8a;
-  --color-primary-fg: #ffffff;
-  --color-danger: #b00020;
-  --color-focus: #2563eb;
+  --blue-700: #1e3a8a;
+  --blue-500: #2563eb;
+  --gray-50:  #f8fafc;
+  --gray-900: #1e293b;
 
-  /* Token Spacing / Jarak */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
   --space-6: 1.5rem;
 
-  /* Token Radius & Shadow */
   --radius-md: 0.5rem;
-  --radius-full: 999px;
-  --shadow-1: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, .10);
 
-  /* Token Ukuran Teks */
   --text-sm: 0.875rem;
   --text-md: 1rem;
   --text-xl: 1.5rem;
   --text-3xl: 2.25rem;
+}
+
+/* LAPIS 2 — semantik: peran. Isinya mengacu ke lapis 1. */
+:root {
+  --color-bg:      var(--gray-50);
+  --color-fg:      var(--gray-900);
+  --color-surface: #ffffff;
+  --color-border:  #d1d5db;
+  --color-primary: var(--blue-700);
+  --color-danger:  #b00020;
+  --color-focus:   var(--blue-500);
+
+  --card-pad:     var(--space-4);
+  --section-gap:  var(--space-6);
 }
