@@ -1,3 +1,30 @@
+/* ==========================================================================
+   1. VARIABEL CSS (Design System)
+   ========================================================================== */
+:root {
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-dark: #18181b;
+  --color-fg: #334155;
+  --color-bg-light: #f8fafc;
+  --color-surface: #ffffff;
+  --color-border: #cbd5e1;
+  --color-muted: #64748b;
+  
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  
+  --text-sm: 0.95rem;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+}
+
+/* ==========================================================================
+   2. TIPOGRAFI & HEADER
+   ========================================================================== */
 h1 {
   margin: 0;
   font-size: 2.8rem;
@@ -7,63 +34,70 @@ h1 {
 }
 
 h2 {
-  color: #18181b; /* Hitam pekat modern */
-  border-bottom: 3px solid #000000; /* Garis bawah hitam tegas */
+  color: var(--color-dark);
+  border-bottom: 3px solid #000000;
   padding-bottom: 0.75rem;
   margin-top: 0;
   font-size: 1.75rem;
   font-weight: 700;
 }
 
-th {
-  background-color: #18181b !important; /* Header tabel menjadi hitam */
-  color: white;
+/* Navigasi Header */
+header .header-content h1 {
+  color: #ffffff;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+header .header-content nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: var(--space-3);
+}
+
+header .header-content nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .header-content nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: var(--text-sm);
   font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease-in-out;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-button[type="submit"] {
-  background-color: #000000; /* Tombol submit jadi hitam */
-  color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.05rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #3f3f46;
+header .header-content nav a:hover {
+  background: var(--color-primary);
+  border-color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.image-container {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.image-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  width: 500px;
-  border: 3px solid #f1f5f9;
-}
-
-figcaption {
-  font-style: italic;
-  color: #64748b;
-  margin-top: 0.85rem;
-  font-size: 0.95rem;
-}
-
+/* ==========================================================================
+   3. TABEL
+   ========================================================================== */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1.5rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 0 0 1px #e2e8f0;
 }
@@ -78,126 +112,128 @@ caption {
 
 th, td {
   padding: 16px 20px;
-  text-align: left;
+  text-align: center;
+  vertical-align: middle;
   border-bottom: 1px solid #e2e8f0;
 }
 
 th {
-  background-color: #1e3a8a;
-  color: white;
+  background-color: var(--color-dark);
+  color: #ffffff;
   font-weight: 600;
 }
 
 tr:hover {
-  background-color: #f8fafc;
+  background-color: var(--color-bg-light);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+/* Rata kiri untuk kolom ke-2 (Nama / Teks) */
+td:nth-child(2), th:nth-child(2) {
+  text-align: left;
 }
 
-form div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-label {
-  font-weight: 600;
-  color: #334155;
-  font-size: 0.95rem;
-}
-
-input[type="text"] {
-  padding: 14px;
-  border: 2px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background-color: #f8fafc;
-}
-
-input[type="text"]:focus {
-  outline: none;
-  border-color: #2563eb;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
-}
-
-button[type="submit"] {
-  background-color: #10b981;
-  color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.05rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #059669;
-  transform: translateY(-2px);
-}
-/* Mengatur ukuran foto di dalam tabel agar rapi dan seragam */
+/* Gambar di dalam tabel */
 td img {
   width: 70px;
   height: 70px;
   object-fit: cover;
-  border-radius: 8px; /* Ganti jadi 50% jika ingin fotonya berbentuk bulat */
+  border-radius: var(--radius-md);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: block;
   margin: 0 auto;
 }
 
-/* Mempercantik perataan teks di dalam tabel */
-td, th {
-  vertical-align: middle;
-  text-align: center;
+/* Pembungkus Form agar berbentuk Card rapi */
+form {
+  max-width: 500px;
+  background: var(--color-surface, #ffffff);
+  padding: 1.75rem;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--color-border, #e2e8f0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+  margin-bottom: 3.5rem; /* Memberikan jarak aman agar tidak menabrak "Tentang Saya" */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-/* Khusus kolom nama dan teks agar rata kiri agar tetap rapi */
-td:nth-child(2), th:nth-child(2) {
-  text-align: left;
+/* Jarak tiap kelompok input & label */
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
+
+/* Kolom isian */
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border, #cbd5e1);
+  border-radius: var(--radius-md, 8px);
+  background: var(--color-surface, #ffffff);
+  color: var(--color-fg, #334155);
+  transition: all 0.2s ease;
+}
+
+/* Tombol submit full width agar proporsional */
+button[type="submit"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* Style untuk pesan peringatan agar rapi */
+.form-kolom:has(input:user-invalid)::after {
+  content: "⚠️ Wajib diisi dengan benar.";
+  color: #dc2626;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   5. MEDIA & SLIDER
+   ========================================================================== */
+.image-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 .image-container img {
   width: 100%;
   max-width: 600px;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   border: 3px solid #f1f5f9;
-  
-  /* Efek animasi bergerak perlahan */
   animation: zoomImage 8s infinite alternate ease-in-out;
 }
 
-@keyframes zoomImage {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.05); /* Membesar secara perlahan */
-  }
+figcaption {
+  font-style: italic;
+  color: var(--color-muted);
+  margin-top: 0.85rem;
+  font-size: 0.95rem;
 }
+
 .slider-container {
   width: 100%;
   max-width: 600px;
   height: 350px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   border: 3px solid #f1f5f9;
 }
 
 .slider-track {
   display: flex;
-  width: 300%; /* Sesuai jumlah foto (misal 3 foto = 300%) */
+  width: 300%;
   animation: slideShow 12s infinite ease-in-out;
 }
 
@@ -207,68 +243,18 @@ td:nth-child(2), th:nth-child(2) {
   object-fit: cover;
 }
 
-/* Animasi menggeser foto secara otomatis */
+/* ANIMASI */
+@keyframes zoomImage {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
 @keyframes slideShow {
-  0% { transform: translateX(0); }
-  30% { transform: translateX(0); }
-  
-  35% { transform: translateX(-33.33%); }
-  65% { transform: translateX(-33.33%); }
-  
-  70% { transform: translateX(-66.66%); }
-  100% { transform: translateX(-66.66%); }
-}
-/* ==========================================================================
-   KOMPONEN: HEADER TEXT & NAVIGATION BUTTONS
-   ========================================================================== */
-
-/* Judul "List Pemain Bola" */
-header .header-content h1 {
-  color: #ffffff !important;
-  font-size: 2.25rem !important;
-  font-weight: 700;
-  margin: 0 !important;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-}
-
-/* List Navigasi (Memisah Menu) */
-header .header-content nav ul {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  gap: var(--space-3) !important; /* Jarak terpisah antar tombol */
-}
-
-header .header-content nav li {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Tombol Tautan Navigasi (Efek Pil Modern) */
-header .header-content nav a {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  font-size: var(--text-sm) !important;
-  font-weight: 600;
-  padding: 0.55rem 1.25rem !important;
-  border-radius: var(--radius-full) !important; /* Bentuk pil membulat */
-  background: rgba(255, 255, 255, 0.18) !important;
-  border: 1px solid rgba(255, 255, 255, 0.35) !important;
-  backdrop-filter: blur(6px);
-  transition: all 0.25s ease-in-out !important;
-  display: inline-block !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Efek Hover Kursor */
-header .header-content nav a:hover {
-  background: var(--color-primary) !important;
-  border-color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  0%, 30% { transform: translateX(0); }
+  35%, 65% { transform: translateX(-33.33%); }
+  70%, 100% { transform: translateX(-66.66%); }
 }

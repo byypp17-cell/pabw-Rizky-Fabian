@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>List Pemain Bola - Rizky Fabian</title>
-  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="token.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="komponen.css">
@@ -88,24 +88,24 @@
     <section id="tambah-pemain">
       <h2>Form Tambah Pemain Bola</h2>
       
-      <form action="#" method="POST">
-        <div>
-          <label for="nama_pemain">Nama Pemain:</label>
-          <input type="text" id="nama_pemain" name="nama_pemain" placeholder="Masukkan nama pemain..." required>
-        </div>
-        
-        <div>
-          <label for="posisi">Posisi:</label>
-          <input type="text" id="posisi" name="posisi" placeholder="Contoh: Penyerang, Gelandang..." required>
-        </div>
-        
-        <div>
-          <label for="klub">Klub:</label>
-          <input type="text" id="klub" name="klub" placeholder="Masukkan nama klub..." required>
-        </div>
+      <form style="max-width: 600px;">
+  <div class="form-kolom">
+    <label for="nama">Nama Pemain:</label>
+    <input type="text" id="nama" placeholder="Masukkan nama pemain..." required>
+  </div>
 
-        <button type="submit">Simpan Pemain</button>
-      </form>
+  <div class="form-kolom">
+    <label for="posisi">Posisi:</label>
+    <input type="text" id="posisi" placeholder="Contoh: Penyerang, Gelandang" required>
+  </div>
+
+  <div class="form-kolom">
+    <label for="klub">Klub:</label>
+    <input type="text" id="klub" placeholder="Masukkan nama klub..." required>
+  </div>
+
+  <button type="submit">Simpan Pemain</button>
+</form>
     </section>
 
     <section id="tentang-saya">
