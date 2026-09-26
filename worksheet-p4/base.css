@@ -1,12 +1,46 @@
-* {
-  box-sizing: border-box;
+/* C.1 Reset ringan dan box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box; /* Wajib ditulis paling atas */
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+* {
   margin: 0;
-  padding: 0;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* C.2 Tipografi & Warna Dasar (Menggunakan rem & token) */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-size: var(--text-md); /* Pakai rem, bukan px */
   line-height: 1.6;
+}
+
+/* Setting line-height judul agar rapat (1.15 - 1.25) */
+h1, h2, h3 {
+  line-height: 1.2;
+  color: var(--color-fg);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-xl); }
+
+/* Menjaga panjang baris 45 - 75 karakter agar enak dibaca */
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
