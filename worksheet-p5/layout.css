@@ -1,86 +1,80 @@
-/* ==========================================================================
-   HEADER & NAVBAR STYLING
-   ========================================================================== */
-
-header {
-  background-color: #0f172a;
-  padding: 1.25rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+/* KERANGKA HALAMAN: grid tiga baris (kepala, isi, kaki) */
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
 }
 
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
+/* NAVBAR: flex satu arah, jarak lewat gap */
+.navbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between; /* Menjaga Kiri dan Kanan Terpisah */
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-nav-bg);
+  border-bottom: 3px solid var(--color-primary-hover);
 }
 
-/* Sisi Kiri: Judul & Tombol Tema */
 .header-brand {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem;
+  gap: var(--space-3) var(--space-4);
+  min-width: 0;
 }
 
-.header-brand h1 {
+.navbar h1 {
   color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
+  font-size: var(--text-xl);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
 }
 
-/* Pengalih Tema */
-.pengalih-tema {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
+.navbar nav { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
-.tombol-tema {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  background-color: rgba(255, 255, 255, 0.1);
+.navbar nav a {
   color: #f8fafc;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, .10);
+  border: 1px solid rgba(255, 255, 255, .2);
+  transition: background-color .2s;
+}
+.navbar nav a:hover { background-color: var(--color-primary-hover); text-decoration: none; }
+
+/* AREA ISI: grid dua kolom dengan area bernama */
+.isi {
+  display: grid;
+  grid-template-columns: 16rem minmax(0, 1fr);
+  grid-template-areas: "sisi utama";
+  gap: var(--space-6);
+  width: min(100%, 78rem);
+  justify-self: center;
+  padding: var(--space-6);
 }
 
-.tombol-tema:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.sisi  { grid-area: sisi; align-self: start; position: sticky; top: var(--space-4); }
+.utama { grid-area: utama; display: grid; gap: var(--section-gap); min-width: 0; }
+
+.utama > article { display: grid; gap: var(--space-4); align-content: start; min-width: 0; }
+
+/* Ponsel: sidebar pindah ke atas, menu berderet */
+@media (max-width: 48rem) {
+  .isi { grid-template-columns: minmax(0, 1fr); grid-template-areas: "sisi" "utama"; padding: var(--space-4); }
+  .sisi { position: static; }
+  .menu-samping { flex-direction: row; flex-wrap: wrap; }
 }
 
-/* Sisi Kanan: Navigasi */
-header nav {
+/* KAKI HALAMAN */
+footer {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-header nav a {
-  color: #f8fafc;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 8px 18px;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: all 0.2s ease;
-}
-
-header nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Indikator Aktif Tombol Tema */
-:root:has(#tema:checked) .tombol-tema {
-  background-color: #2563eb;
-  border-color: #3b82f6;
+  justify-content: center;
+  padding: var(--space-6);
+  background-color: var(--color-nav-bg);
+  color: var(--slate-300);
+  font-size: var(--text-sm);
 }

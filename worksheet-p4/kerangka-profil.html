@@ -10,11 +10,10 @@
   <link rel="stylesheet" href="komponen.css">
   <link rel="stylesheet" href="tema.css">
 </head>
-<body>
+<body class="page">
 
-  <header>
-  <div class="header-content">
-    <!-- KIRI: Judul & Pengalih Tema -->
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
     <div class="header-brand">
       <h1>List Pemain Bola</h1>
       <div class="theme-switch-wrapper">
@@ -23,98 +22,159 @@
       </div>
     </div>
 
-    <!-- KANAN: Navigasi Menu -->
     <nav>
-      <a href="#daftar">Daftar Pemain</a>
-      <a href="#tambah">Tambah Pemain</a>
-      <a href="#tentang">Tentang Saya</a>
+      <a href="#daftar-pemain">Daftar Pemain</a>
+      <a href="#tambah-pemain">Tambah Pemain</a>
+      <a href="#tentang-saya">Tentang Saya</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-  <main>
+  <!-- AREA ISI (GRID 2 KOLOM: SIDEBAR & UTAMA) -->
+  <main class="isi">
     
-    <section id="daftar-pemain">
-      <h2>Daftar Pemain Bola Favorit</h2>
+    <!-- KOLOM KIRI: SIDEBAR -->
+    <aside class="sisi">
+      <h3>Menu Samping</h3>
+      <nav class="menu-samping">
+        <a href="#daftar-pemain">Daftar Pemain</a>
+        <a href="#galeri-pemain">Galeri Kartu</a>
+        <a href="#tambah-pemain">Tambah Pemain</a>
+        <a href="#tentang-saya">Tentang Saya</a>
+      </nav>
+    </aside>
+
+    <!-- KOLOM KANAN: KONTEN UTAMA -->
+    <section class="utama">
       
-      <figure>
-        <div class="slider-container">
-          <div class="slider-track">
-            <img src="Alll.jpg" alt="Messi">
-            <img src="all2.jpg" alt="De Bruyne">
-            <img src="all3.jpg" alt="Neymar">
+      <!-- SLIDER & TABEL -->
+      <article id="daftar-pemain">
+        <h2>Daftar Pemain Bola Favorit</h2>
+        
+        <figure>
+          <div class="slider-container">
+            <div class="slider-track">
+              <img src="Alll.jpg" alt="Messi">
+              <img src="all2.jpg" alt="De Bruyne">
+              <img src="all3.jpg" alt="Neymar">
+            </div>
           </div>
+          <figcaption>Gambar 1.1: Pemain bola andalan di klub.</figcaption>
+        </figure>
+
+        <table>
+          <caption>Tabel Koleksi Pemain Bola Favorit</caption>
+          <thead>
+            <tr>
+              <th scope="col">Foto</th>
+              <th scope="col">Nama Pemain</th>
+              <th scope="col">Posisi</th>
+              <th scope="col">Klub</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="MessiFoto.jpg" alt="Lionel Messi" class="table-img"></td>
+              <td>Lionel Messi</td>
+              <td>Penyerang</td>
+              <td>Inter Miami</td>
+              <td>Aktif</td>
+            </tr>
+            <tr>
+              <td><img src="kdbfoto.jpg" alt="Kevin De Bruyne" class="table-img"></td>
+              <td>Kevin De Bruyne</td>
+              <td>Gelandang</td>
+              <td>Manchester City</td>
+              <td>Aktif</td>
+            </tr>
+            <tr>
+              <td><img src="vvdfoto.jpg" alt="Virgil van Dijk" class="table-img"></td>
+              <td>Virgil van Dijk</td>
+              <td>Bek</td>
+              <td>Liverpool</td>
+              <td>Aktif</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-- GALERI KARTU ADAPTIF (KOMPONEN CSS GRID & FLEXBOX) -->
+      <article id="galeri-pemain">
+        <h2>Galeri Kartu Pemain</h2>
+        <div class="galeri">
+          
+          <div class="kartu sorotan">
+            <img src="MessiFoto.jpg" alt="Lionel Messi">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Lionel Messi</h3>
+              <p>Penyerang bintang Inter Miami asal Argentina.</p>
+            </div>
+            <div class="kartu__kaki">
+              <span>Status: Aktif</span>
+              <button>Detail</button>
+            </div>
+          </div>
+
+          <div class="kartu">
+            <img src="kdbfoto.jpg" alt="Kevin De Bruyne">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Kevin De Bruyne</h3>
+              <p>Gelandang maestro Manchester City.</p>
+            </div>
+            <div class="kartu__kaki">
+              <span>Status: Aktif</span>
+              <button>Detail</button>
+            </div>
+          </div>
+
+          <div class="kartu">
+            <img src="vvdfoto.jpg" alt="Virgil van Dijk">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Virgil van Dijk</h3>
+              <p>Bek tangguh dan kapten Liverpool FC.</p>
+            </div>
+            <div class="kartu__kaki">
+              <span>Status: Aktif</span>
+              <button>Detail</button>
+            </div>
+          </div>
+
         </div>
-        <figcaption>Gambar 1.1: Pemain bola andalan di klub.</figcaption>
-      </figure>
+      </article>
 
-      <table>
-        <caption>Tabel Koleksi Pemain Bola Favorit</caption>
-        <thead>
-          <tr>
-            <th scope="col">Foto</th>
-            <th scope="col">Nama Pemain</th>
-            <th scope="col">Posisi</th>
-            <th scope="col">Klub</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="MessiFoto.jpg" alt="Lionel Messi" class="table-img"></td>
-            <td>Lionel Messi</td>
-            <td>Penyerang</td>
-            <td>Inter Miami</td>
-            <td>Aktif</td>
-          </tr>
-          <tr>
-            <td><img src="kdbfoto.jpg" alt="Kevin De Bruyne" class="table-img"></td>
-            <td>Kevin De Bruyne</td>
-            <td>Gelandang</td>
-            <td>Manchester City</td>
-            <td>Aktif</td>
-          </tr>
-          <tr>
-            <td><img src="vvdfoto.jpg" alt="Virgil van Dijk" class="table-img"></td>
-            <td>Virgil van Dijk</td>
-            <td>Bek</td>
-            <td>Liverpool</td>
-            <td>Aktif</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- FORM TAMBAH PEMAIN -->
+      <article id="tambah-pemain">
+        <h2>Form Tambah Pemain Bola</h2>
+        <form style="max-width: 600px;">
+          <div class="form-kolom">
+            <label for="nama">Nama Pemain:</label>
+            <input type="text" id="nama" placeholder="Masukkan nama pemain..." required>
+          </div>
+
+          <div class="form-kolom">
+            <label for="posisi">Posisi:</label>
+            <input type="text" id="posisi" placeholder="Contoh: Penyerang, Gelandang" required>
+          </div>
+
+          <div class="form-kolom">
+            <label for="klub">Klub:</label>
+            <input type="text" id="klub" placeholder="Masukkan nama klub..." required>
+          </div>
+
+          <button type="submit">Simpan Pemain</button>
+        </form>
+      </article>
+
+      <!-- TENTANG SAYA -->
+      <article id="tentang-saya">
+        <h2>Tentang Saya</h2>
+        <p>Halaman ini dikembangkan oleh Rizky Fabian (NIM: 25523208).</p>
+      </article>
+
     </section>
-
-    <section id="tambah-pemain">
-      <h2>Form Tambah Pemain Bola</h2>
-      
-      <form style="max-width: 600px;">
-  <div class="form-kolom">
-    <label for="nama">Nama Pemain:</label>
-    <input type="text" id="nama" placeholder="Masukkan nama pemain..." required>
-  </div>
-
-  <div class="form-kolom">
-    <label for="posisi">Posisi:</label>
-    <input type="text" id="posisi" placeholder="Contoh: Penyerang, Gelandang" required>
-  </div>
-
-  <div class="form-kolom">
-    <label for="klub">Klub:</label>
-    <input type="text" id="klub" placeholder="Masukkan nama klub..." required>
-  </div>
-
-  <button type="submit">Simpan Pemain</button>
-</form>
-    </section>
-
-    <section id="tentang-saya">
-      <h2>Tentang Saya</h2>
-      <p>Halaman ini dikembangkan oleh Rizky Fabian (NIM: 25523208).</p>
-    </section>
-
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 Rizky Fabian - 25523208</p>
   </footer>

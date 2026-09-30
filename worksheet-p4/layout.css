@@ -84,3 +84,34 @@ header nav a:hover {
   background-color: #2563eb;
   border-color: #3b82f6;
 }
+/* Kerangka Utama Halaman */
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+/* Navigasi Utama */
+.navbar {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* Area Isi (Sidebar & Konten) */
+.isi {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  gap: var(--space-6);
+}
+/* Penataan Area dan Tata Letak Utama (Worksheet D.2) */
+.isi {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  grid-template-areas:
+    "sisi utama"
+    "sisi bawah";
+}
+
+.sisi  { grid-area: sisi; }
+.utama { grid-area: utama; }

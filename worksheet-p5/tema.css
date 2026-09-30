@@ -1,139 +1,70 @@
-/* Sembunyikan checkbox asli agar tidak merusak tampilan */
-.pengalih-tema {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
+/* Pengalih tema tanpa JavaScript: checkbox + :has() */
+.pengalih-tema { position: absolute; opacity: 0; pointer-events: none; }
 
-/* Tampilan tombol Pengalih Tema */
 .tombol-tema {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, .10);
+  border: 1px solid rgba(255, 255, 255, .25);
+  color: #f8fafc;
+  font-size: var(--text-sm);
   font-weight: 600;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: background-color .2s;
 }
+.tombol-tema:hover { background-color: rgba(255, 255, 255, .22); }
+.pengalih-tema:focus-visible + .tombol-tema { outline: 3px solid var(--color-focus); outline-offset: 2px; }
 
-.tombol-tema:hover {
-  background-color: rgba(255, 255, 255, 0.35);
-}
+:root:has(#tema:checked) .tombol-tema { background-color: var(--blue-600); border-color: var(--blue-500); }
+:root:has(#tema:checked) .tombol-tema::after { content: " (Aktif)"; white-space: pre; }
 
-/* Ubah teks tombol saat tema aktif/di-centang */
-:root:has(#tema:checked) .tombol-tema::after {
-  content: " (Aktif)";
-}
-
-/* ==========================================================================
-   PENGALIH TEMA DENGAN :has() (Tanpa JavaScript)
-   ========================================================================== */
+/* Tema gelap: cukup menimpa token semantik, komponen ikut berubah */
 :root:has(#tema:checked) {
-  --color-bg: #0F172A;
-  --color-fg: #E2E8F0;
-  --color-surface: #1E293B;
-  --color-border: #334155;
-  --color-primary: #7DA9F7;
-  --color-danger: #FF8A8A;
-  --color-focus: #FFC000;
-}
-
-/* Terapkan variabel warna gelap ke elemen halaman */
-:root:has(#tema:checked) body {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-}
-
-:root:has(#tema:checked) form,
-:root:has(#tema:checked) table,
-:root:has(#tema:checked) .card {
-  background-color: var(--color-surface);
-  border-color: var(--color-border);
-  color: var(--color-fg);
-}
-
-:root:has(#tema:checked) input,
-:root:has(#tema:checked) select,
-:root:has(#tema:checked) textarea {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-  border-color: var(--color-border);
-}
-/* ==========================================================================
-   PERBAIKAN TEMA GELAP (MODE MALAM)
-   ========================================================================== */
-
-:root:has(#tema:checked) {
-  --color-bg: #0f172a;
-  --color-fg: #f8fafc;
-  --color-surface: #1e293b;
-  --color-border: #334155;
+  --color-bg: #0b1220;
+  --color-fg: #cbd5e1;
+  --color-heading: #f8fafc;
   --color-muted: #94a3b8;
+  --color-surface: #1e293b;
+  --color-surface-2: #172033;
+  --color-border: #334155;
+  --color-primary: #7da9f7;
+  --color-primary-hover: #a5c4fa;
+  --color-on-primary: #0f172a;
+  --color-focus: #ffc000;
+  --color-danger: #ff8a8a;
+  --color-ok-bg: #12372a;
+  --color-ok-fg: #6ee7b7;
+  --color-nav-bg: #020617;
+  color-scheme: dark;
+}
+/* Mode Terang (Bawaan) */
+:root {
+  --bg-utama: #ffffff;
+  --text-utama: #1e293b;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
 }
 
-/* 1. Deklarasi nilai variable saat mode tema aktif */
-:root:has(#tema:checked) {
-  --color-bg: #121212;        /* sesuaikan dengan warna background gelap Anda */
-  --color-fg: #ffffff;        /* warna teks utama */
-  --color-heading: #ffffff;   /* warna judul */
-  --color-border: #333333;    /* warna border */
+/* Mode Gelap (Saat aktif) */
+body.dark-mode {
+  --bg-utama: #0f172a;
+  --text-utama: #f8fafc;
+  --bg-card: #1e293b;
+  --border-color: #334155;
 }
 
-/* 2. Style bawaan elemen (cukup ditulis sekali saja) */
+/* Terapkan variabel dengan transisi */
 body {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
+  background-color: var(--bg-utama);
+  color: var(--text-utama);
+  /* Transisi agar perubahan warna variabel terasa halus */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4 {
-  color: var(--color-heading, var(--color-fg));
-  border-bottom-color: var(--color-border);
-}
-
-/* 3. Teks Keterangan Gambar (fig-caption / italic text) */
-:root:has(#tema:checked) figcaption,
-:root:has(#tema:checked) em,
-:root:has(#tema:checked) .caption {
-  color: var(--color-muted) !important;
-}
-
-/* 4. Tampilan Tabel saat Mode Gelap */
-:root:has(#tema:checked) table {
-  background-color: var(--color-surface);
-  color: var(--color-fg);
-  border-color: var(--color-border);
-}
-
-:root:has(#tema:checked) th {
-  background-color: #334155;
-  color: #ffffff;
-}
-
-:root:has(#tema:checked) td {
-  border-color: var(--color-border);
-  color: var(--color-fg);
-}
-
-/* 5. Tampilan Card / Form saat Mode Gelap */
-:root:has(#tema:checked) form,
-:root:has(#tema:checked) .card {
-  background-color: var(--color-surface);
-  border-color: var(--color-border);
-  color: var(--color-fg);
-}
-
-:root:has(#tema:checked) label {
-  color: var(--color-fg);
-}
-
-:root:has(#tema:checked) input,
-:root:has(#tema:checked) select,
-:root:has(#tema:checked) textarea {
-  background-color: var(--color-bg);
-  color: #ffffff;
-  border-color: var(--color-border);
+.kartu {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }

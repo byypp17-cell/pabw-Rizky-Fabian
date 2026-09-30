@@ -1,46 +1,42 @@
-/* C.1 Reset ringan dan box-sizing */
-*, *::before, *::after {
-  box-sizing: border-box; /* Wajib ditulis paling atas */
-}
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
 
-* {
-  margin: 0;
-}
+html { scroll-padding-top: var(--space-6); scroll-behavior: smooth; }
 
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* C.2 Tipografi & Warna Dasar (Menggunakan rem & token) */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6;
   background-color: var(--color-bg);
   color: var(--color-fg);
-  font-size: var(--text-md); /* Pakai rem, bukan px */
-  line-height: 1.6;
 }
 
-/* Setting line-height judul agar rapat (1.15 - 1.25) */
-h1, h2, h3 {
-  line-height: 1.2;
-  color: var(--color-fg);
-}
+img, video { display: block; max-width: 100%; height: auto; }
 
+h1, h2, h3 { line-height: 1.2; color: var(--color-heading); }
 h1 { font-size: var(--text-3xl); }
 h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+p  { max-width: 65ch; }
 
-/* Menjaga panjang baris 45 - 75 karakter agar enak dibaca */
-p {
-  max-width: 65ch;
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none; transition: none; }
 }
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+/* Aturan transisi halus untuk seluruh elemen utama */
+body,
+header,
+main,
+footer,
+aside,
+.kartu,
+.kartu__kaki,
+input,
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }

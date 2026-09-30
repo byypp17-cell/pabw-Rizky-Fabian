@@ -258,3 +258,93 @@ figcaption {
   35%, 65% { transform: translateX(-33.33%); }
   70%, 100% { transform: translateX(-66.66%); }
 }
+/* Galeri Kartu Adaptif */
+/* ==========================================
+   GALERI KARTU ADAPTIF & KEMAS
+   ========================================== */
+
+/* 1. Galeri Grid (Worksheet C.1) */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4, 1.25rem);
+  margin-top: 1rem;
+}
+
+/* 2. Kad Utama */
+.kartu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. Kawalan Saiz Gambar Seragam (KUNCI PERBAIKAN) */
+.kartu img {
+  width: 100%;
+  height: 180px;            /* Ketinggian gambar diseragamkan untuk semua kad */
+  object-fit: cover;         /* Memastikan gambar memenuhi ruang tanpa penyek */
+  object-position: top center; /* Memastikan muka/bahagian atas pemain sentiasa kelihatan */
+  background-color: #f1f5f9;
+}
+
+/* 4. Isi dan Kaki Kad (Worksheet C.2 & E.2) */
+.kartu__isi {
+  padding: 1rem;
+  flex: 1;                  /* Memastikan tinggi kad seimbang */
+  min-width: 0;             /* Elak teks panjang merosakkan grid */
+}
+
+.kartu__judul {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.kartu__isi p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #f1f5f9;
+  background-color: #f8fafc;
+  gap: 0.5rem;
+}
+
+.kartu__kaki span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0d9488;
+}
+
+.kartu__kaki button {
+  padding: 0.4rem 0.9rem;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 5. Kad Sorotan (Worksheet D.1) */
+.sorotan {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .sorotan {
+    grid-column: span 2;
+  }
+}
