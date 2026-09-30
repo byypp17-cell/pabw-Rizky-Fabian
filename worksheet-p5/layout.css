@@ -3,6 +3,8 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100dvh;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
 }
 
 /* NAVBAR: flex satu arah, jarak lewat gap */
@@ -13,38 +15,36 @@
   justify-content: space-between;
   gap: var(--space-4) var(--space-6);
   padding: var(--space-4) var(--space-6);
-  background-color: var(--color-nav-bg);
-  border-bottom: 3px solid var(--color-primary-hover);
+  background: linear-gradient(100deg, var(--navy-900), var(--navy-800));
+  border-bottom: 4px solid var(--color-accent);
 }
 
-.header-brand {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-3) var(--space-4);
-  min-width: 0;
-}
+.header-brand { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); min-width: 0; }
 
 .navbar h1 {
   color: #ffffff;
   font-size: var(--text-xl);
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
   overflow-wrap: anywhere;
 }
+.navbar h1::first-line { color: var(--color-accent); }
 
 .navbar nav { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
 .navbar nav a {
   color: #f8fafc;
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
   padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-full);
-  background-color: rgba(255, 255, 255, .10);
-  border: 1px solid rgba(255, 255, 255, .2);
-  transition: background-color .2s;
+  border-radius: var(--radius-md);
+  border-bottom: 3px solid transparent;
+  transition: background-color .25s, color .25s, border-color .25s;
 }
-.navbar nav a:hover { background-color: var(--color-primary-hover); text-decoration: none; }
+.navbar nav a:hover { background-color: rgba(255, 255, 255, .08); border-bottom-color: var(--color-accent); text-decoration: none; }
 
 /* AREA ISI: grid dua kolom dengan area bernama */
 .isi {
@@ -78,3 +78,32 @@ footer {
   color: var(--slate-300);
   font-size: var(--text-sm);
 }
+
+/* HERO: banner pembuka, gambar di belakang lapisan gelap */
+.hero {
+  display: grid;
+  gap: var(--space-4);
+  align-content: center;
+  min-height: 16rem;
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  border-left: 8px solid var(--color-accent);
+  background: linear-gradient(100deg, rgba(10, 22, 48, .96) 35%, rgba(10, 22, 48, .55)), url("Alll.jpg") center / cover;
+  box-shadow: var(--shadow-2);
+}
+.hero__label { color: var(--color-accent); font-weight: 800; text-transform: uppercase; letter-spacing: .2em; font-size: var(--text-sm); }
+.utama .hero h2 {
+  border: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  overflow-wrap: anywhere;
+}
+.hero p { color: #cbd5e1; }
+.hero__stat { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); padding-top: var(--space-3); }
+.hero__stat div { display: grid; }
+.hero__stat strong { color: var(--color-accent); font-size: var(--text-3xl); font-weight: 900; line-height: 1; }
+.hero__stat span { color: #cbd5e1; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .1em; }

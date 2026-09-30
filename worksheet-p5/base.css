@@ -13,6 +13,11 @@ body {
 
 img, video { display: block; max-width: 100%; height: auto; }
 
+/* Peralihan tema halus: warna berubah pelan saat token berganti */
+*, *::before, *::after {
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+
 h1, h2, h3 { line-height: 1.2; color: var(--color-heading); }
 h1 { font-size: var(--text-3xl); }
 h2 { font-size: var(--text-xl); }
@@ -27,16 +32,4 @@ a:hover { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none; transition: none; }
-}
-/* Aturan transisi halus untuk seluruh elemen utama */
-body,
-header,
-main,
-footer,
-aside,
-.kartu,
-.kartu__kaki,
-input,
-button {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }

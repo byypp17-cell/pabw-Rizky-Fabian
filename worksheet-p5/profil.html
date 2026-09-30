@@ -10,14 +10,15 @@
   <link rel="stylesheet" href="komponen.css">
   <link rel="stylesheet" href="tema.css">
 </head>
-<body class="page">
+<body>
+  <input type="checkbox" id="tema" class="pengalih-tema" aria-label="Aktifkan mode gelap">
+  <div class="page">
 
   <header class="navbar">
     <div class="header-brand">
       <h1>List Pemain Bola</h1>
       <div>
-        <input type="checkbox" id="tema" class="pengalih-tema">
-        <label for="tema" class="tombol-tema">🌙 Tema Gelap</label>
+        <label for="tema" class="tombol-tema"><span class="saklar" aria-hidden="true"></span><span class="teks-tema"></span></label>
       </div>
     </div>
     <nav aria-label="Menu utama">
@@ -40,6 +41,17 @@
     </aside>
 
     <div class="utama">
+      <section class="hero" aria-label="Pembuka">
+        <p class="hero__label">Koleksi Favorit</p>
+        <h2>Legenda di Lapangan Hijau</h2>
+        <p>Tiga pemain pilihan dengan posisi, klub, dan statusnya, disusun rapi dalam satu halaman.</p>
+        <div class="hero__stat">
+          <div><strong>3</strong><span>Pemain</span></div>
+          <div><strong>3</strong><span>Klub</span></div>
+          <div><strong>100%</strong><span>Aktif</span></div>
+        </div>
+      </section>
+
       <article id="daftar-pemain">
         <h2>Daftar Pemain Bola Favorit</h2>
         <figure>
@@ -67,7 +79,7 @@
             </thead>
             <tbody>
               <tr>
-                <td><img src="Messi.jpg" alt="Lionel Messi"></td>
+                <td><img src="MessiFoto.jpg" alt="Lionel Messi"></td>
                 <td>Lionel Messi</td><td>Penyerang</td><td>Inter Miami</td>
                 <td><span class="lencana">Aktif</span></td>
               </tr>
@@ -90,7 +102,7 @@
         <h2>Galeri Kartu Pemain</h2>
         <div class="galeri">
           <div class="kartu sorotan">
-            <img src="Messi.jpg" alt="Lionel Messi">
+            <img src="MessiFoto.jpg" alt="Lionel Messi">
             <div class="kartu__isi">
               <h3 class="kartu__judul">Lionel Messi</h3>
               <p>Penyerang bintang Inter Miami asal Argentina.</p>
@@ -153,5 +165,6 @@
     <p>&copy; 2026 Rizky Fabian - 25523208</p>
   </footer>
 
+  </div>
 </body>
 </html>
