@@ -1,0 +1,86 @@
+/* ==========================================================================
+   HEADER & NAVBAR STYLING
+   ========================================================================== */
+
+header {
+  background-color: #0f172a;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Menjaga Kiri dan Kanan Terpisah */
+  gap: 1.5rem;
+}
+
+/* Sisi Kiri: Judul & Tombol Tema */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-brand h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Pengalih Tema */
+.pengalih-tema {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tombol-tema:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sisi Kanan: Navigasi */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+header nav a {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Indikator Aktif Tombol Tema */
+:root:has(#tema:checked) .tombol-tema {
+  background-color: #2563eb;
+  border-color: #3b82f6;
+}
