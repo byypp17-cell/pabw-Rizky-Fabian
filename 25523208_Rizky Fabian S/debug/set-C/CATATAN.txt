@@ -1,0 +1,19 @@
+SET DEBUG C - Servis Laptop Cepat
+==============================================
+Halaman ini mengandung TEPAT 5 kesalahan (gabungan di index.html dan css/style.css).
+
+Perilaku yang SEHARUSNYA terjadi setelah diperbaiki:
+  1. Gambar bengkel tampil.
+  2. Struktur heading berurutan: h1 lalu h2 untuk setiap judul section.
+  3. Teks jam buka berwarna secondary dan bergaris kiri secondary.
+  4. Link menu berwarna putih di atas header berwarna primary.
+  5. Di layar >= 48rem, menu tersusun horizontal.
+
+Cara mengerjakan:
+  1. Salin folder set ini ke NIM_Nama/debug/ (jangan ubah nama folder).
+  2. Perbaiki kesalahan langsung pada file.
+  3. Tepat di atas/di samping setiap perbaikan, tulis komentar:
+       HTML : <!-- FIX-1: penyebab kesalahan dan alasan perbaikan -->
+       CSS  : /* FIX-1: penyebab kesalahan dan alasan perbaikan */
+     Nomori FIX-1 sampai FIX-5.
+  4. Jangan menulis ulang file dari nol. Perubahan di luar 5 kesalahan tidak dinilai.

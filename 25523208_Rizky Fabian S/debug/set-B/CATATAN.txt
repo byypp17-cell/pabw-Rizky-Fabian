@@ -1,0 +1,18 @@
+SET DEBUG B - Rental Buku Pustaka Kita
+==============================================
+Halaman ini mengandung TEPAT 5 kesalahan (gabungan di index.html dan css/style.css).
+
+Perilaku yang SEHARUSNYA terjadi setelah diperbaiki:
+  1. Halaman tampil benar di ponsel (lebar mengikuti layar perangkat).
+  2. Ketiga menu (Koleksi, Tarif, Kontak) berada di dalam satu daftar navigasi.
+  3. Paragraf tarif berlatar warna secondary dengan teks putih.
+  4. Di layar kecil, kartu buku tersusun satu kolom. Di layar >= 48rem, kartu buku tersusun tiga kolom dan menu horizontal.
+
+Cara mengerjakan:
+  1. Salin folder set ini ke NIM_Nama/debug/ (jangan ubah nama folder).
+  2. Perbaiki kesalahan langsung pada file.
+  3. Tepat di atas/di samping setiap perbaikan, tulis komentar:
+       HTML : <!-- FIX-1: penyebab kesalahan dan alasan perbaikan -->
+       CSS  : /* FIX-1: penyebab kesalahan dan alasan perbaikan */
+     Nomori FIX-1 sampai FIX-5.
+  4. Jangan menulis ulang file dari nol. Perubahan di luar 5 kesalahan tidak dinilai.

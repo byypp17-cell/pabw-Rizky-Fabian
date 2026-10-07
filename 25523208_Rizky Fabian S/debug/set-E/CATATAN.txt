@@ -1,0 +1,19 @@
+SET DEBUG E - Kursus Renang Lumba
+==============================================
+Halaman ini mengandung TEPAT 5 kesalahan (gabungan di index.html dan css/style.css).
+
+Perilaku yang SEHARUSNYA terjadi setelah diperbaiki:
+  1. Bahasa dokumen dinyatakan sebagai bahasa Indonesia.
+  2. Baris judul tabel berlatar secondary dengan teks putih, dan secara semantik merupakan sel header.
+  3. Gambar dan judul pada hero berada di tengah.
+  4. Gambar tidak meluber pada layar 360px (tidak ada scroll horizontal).
+  5. Di layar >= 48rem: hero selebar penuh, lalu main (kiri) dan aside Biaya (kanan, 16rem).
+
+Cara mengerjakan:
+  1. Salin folder set ini ke NIM_Nama/debug/ (jangan ubah nama folder).
+  2. Perbaiki kesalahan langsung pada file.
+  3. Tepat di atas/di samping setiap perbaikan, tulis komentar:
+       HTML : <!-- FIX-1: penyebab kesalahan dan alasan perbaikan -->
+       CSS  : /* FIX-1: penyebab kesalahan dan alasan perbaikan */
+     Nomori FIX-1 sampai FIX-5.
+  4. Jangan menulis ulang file dari nol. Perubahan di luar 5 kesalahan tidak dinilai.

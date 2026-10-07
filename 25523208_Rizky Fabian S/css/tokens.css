@@ -1,0 +1,7 @@
+:root {
+  --color-primary: hsl(72, 70%, 35%);
+  --color-secondary: hsl(252, 60%, 30%);
+  --color-surface: #f7f7f7;
+  --color-text: #222222;
+  --space: 1rem;
+}

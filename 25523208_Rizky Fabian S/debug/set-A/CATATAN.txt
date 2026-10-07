@@ -1,0 +1,19 @@
+SET DEBUG A - Toko Roti Mentari
+==============================================
+Halaman ini mengandung TEPAT 5 kesalahan (gabungan di index.html dan css/style.css).
+
+Perilaku yang SEHARUSNYA terjadi setelah diperbaiki:
+  1. Tampilan halaman memakai CSS (header berlatar warna primary, teks putih).
+  2. Klik pada tulisan label Email memindahkan kursor ke input email.
+  3. Di layar kecil (< 48rem) semua bagian tersusun satu kolom; menu tersusun vertikal.
+  4. Di layar >= 48rem, menu horizontal dan layout dua kolom: main di kiri, aside Lokasi di kanan (16rem), header dan footer selebar penuh.
+  5. Aside memiliki garis kiri berwarna secondary.
+
+Cara mengerjakan:
+  1. Salin folder set ini ke NIM_Nama/debug/ (jangan ubah nama folder).
+  2. Perbaiki kesalahan langsung pada file.
+  3. Tepat di atas/di samping setiap perbaikan, tulis komentar:
+       HTML : <!-- FIX-1: penyebab kesalahan dan alasan perbaikan -->
+       CSS  : /* FIX-1: penyebab kesalahan dan alasan perbaikan */
+     Nomori FIX-1 sampai FIX-5.
+  4. Jangan menulis ulang file dari nol. Perubahan di luar 5 kesalahan tidak dinilai.

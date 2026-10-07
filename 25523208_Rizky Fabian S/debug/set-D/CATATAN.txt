@@ -1,0 +1,19 @@
+SET DEBUG D - Kebun Sayur Segar
+==============================================
+Halaman ini mengandung TEPAT 5 kesalahan (gabungan di index.html dan css/style.css).
+
+Perilaku yang SEHARUSNYA terjadi setelah diperbaiki:
+  1. Mengetik 'abc' pada Email lalu klik Daftar memunculkan pesan validasi browser.
+  2. Klik Daftar dengan Nama kosong memunculkan pesan validasi browser.
+  3. Tidak ada scroll horizontal pada layar 360px; input tidak melewati tepi halaman.
+  4. Header dan footer sama-sama berlatar warna primary.
+  5. Di layar >= 48rem: header selebar penuh, footer di kolom kiri (12rem), main di kolom kanan.
+
+Cara mengerjakan:
+  1. Salin folder set ini ke NIM_Nama/debug/ (jangan ubah nama folder).
+  2. Perbaiki kesalahan langsung pada file.
+  3. Tepat di atas/di samping setiap perbaikan, tulis komentar:
+       HTML : <!-- FIX-1: penyebab kesalahan dan alasan perbaikan -->
+       CSS  : /* FIX-1: penyebab kesalahan dan alasan perbaikan */
+     Nomori FIX-1 sampai FIX-5.
+  4. Jangan menulis ulang file dari nol. Perubahan di luar 5 kesalahan tidak dinilai.
