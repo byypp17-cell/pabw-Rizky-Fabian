@@ -5,7 +5,7 @@
 
 // ---------- Lembar B: data sebagai variabel ----------
 const profil = {
-  nama: "Rizky Fabian",
+  nama: "Rizky Fabian s",
   nim: "25523208",
   peran: "Mahasiswa Informatika yang belajar front-end",
   keahlian: ["HTML", "CSS", "JavaScript", "Git & GitHub", "Desain Responsif"],
