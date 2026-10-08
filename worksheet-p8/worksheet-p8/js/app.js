@@ -12,8 +12,8 @@ const profil = {
   // "kontak" sengaja belum diisi — dipakai untuk mendemokan ?. dan ??
 };
 
-const tahun = 2026;            
-let pilihanAktif = "semua";    
+const tahun = 2026;
+let pilihanAktif = "semua";
 
 const email = profil.kontak?.email ?? "belum diisi";      // aman walau kontak belum ada
 const kalimat = `Nama saya ${profil.nama}, dan saya belajar ${profil.keahlian.length} hal.`;
@@ -56,6 +56,24 @@ const buatKartu = (p) => `
   </div>`;
 
 const buatStat = (angka, label) => `<div><strong>${angka}</strong><span>${label}</span></div>`;
+
+// ---------- Lembar D: array of object (HARUS di atas bagian yang memakainya) ----------
+const daftarPemain = [
+  { nama: "Lionel Messi", foto: "MessiFoto.jpg", posisi: "Penyerang", klub: "Inter Miami", aktif: true, sorotan: true,
+    deskripsi: "Penyerang bintang Inter Miami asal Argentina." },
+  { nama: "Kevin De Bruyne", foto: "kdbfoto.jpg", posisi: "Gelandang", klub: "Manchester City", aktif: true,
+    deskripsi: "Gelandang maestro Manchester City." },
+  { nama: "Virgil van Dijk", foto: "vvdfoto.jpg", posisi: "Bek", klub: "Liverpool", aktif: true,
+    deskripsi: "Bek tangguh dan kapten Liverpool FC." },
+];
+
+const daftarSlider = [
+  { src: "Alll.jpg", alt: "Lionel Messi" },
+  { src: "all2.jpg", alt: "Kevin De Bruyne" },
+  { src: "all3.jpg", alt: "Neymar" },
+];
+
+const jumlahPemain = daftarPemain.length;
 
 // ---------- Uji di Console ----------
 console.log(kalimat);
@@ -112,22 +130,3 @@ isiHtml("#isi-galeri",
 isiHtml("#tentang-teks", buatPerkenalan(profil));
 isiHtml("#daftar-keahlian", profil.keahlian.map((k) => `<li>${k}</li>`).join(""));
 isiHtml("#kaki", `&copy; ${tahun} ${profil.nama} - ${profil.nim}`);
-
-// ---------- Lembar D: array of object ----------
-const daftarPemain = [
-  { nama: "Lionel Messi",    foto: "MessiFoto.jpg", posisi: "Penyerang", klub: "Inter Miami",     aktif: true, sorotan: true,
-    deskripsi: "Penyerang bintang Inter Miami asal Argentina." },
-  { nama: "Kevin De Bruyne", foto: "kdbfoto.jpg",   posisi: "Gelandang", klub: "Manchester City", aktif: true,
-    deskripsi: "Gelandang maestro Manchester City." },
-  { nama: "Virgil van Dijk", foto: "vvdfoto.jpg",   posisi: "Bek",       klub: "Liverpool",       aktif: true,
-    deskripsi: "Bek tangguh dan kapten Liverpool FC." },
-];
-
-const daftarSlider = [
-  { src: "Alll.jpg", alt: "Lionel Messi" },
-  { src: "all2.jpg", alt: "Kevin De Bruyne" },
-  { src: "all3.jpg", alt: "Neymar" },
-];
-
-const jumlahPemain = daftarPemain.length;
-
