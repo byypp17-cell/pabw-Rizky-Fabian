@@ -22,7 +22,7 @@ Buka lewat server lokal, **bukan** klik dua kali (`file://` memblokir modul):
 atau klik kanan `profil.html` → Open with Live Server (VS Code).
 
 ## Deklarasi AI
-- **Dibantu AI (Claude):** memindahkan isi `profil.html` menjadi data di `js/app.js`, penulisan fungsi, dan draf isian worksheet.
+- Dibantu AI (Claude): memindahkan isi `profil.html` menjadi data di `js/app.js`, penulisan fungsi, dan draf isian worksheet.
 - **Saya kerjakan sendiri:** halaman dan CSS dari Pertemuan 6, menjalankan halaman lewat server lokal, membaca Console, dan memahami setiap baris kode sebelum dikumpulkan.
 
 > Sesuaikan bagian "saya kerjakan sendiri" dengan kenyataan pengerjaan Anda.
