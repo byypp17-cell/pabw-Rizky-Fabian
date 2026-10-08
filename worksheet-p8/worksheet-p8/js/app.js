@@ -22,3 +22,94 @@ window.profil = profil;  // agar bisa diakses di console
 window.tahun = tahun;  // agar bisa diakses di console
 window.email = email;  // agar bisa diakses di console
 window.kalimat = kalimat;  // agar bisa diakses di console
+
+// ---------- Lembar C: fungsi murni ----------
+// 1. Menyusun kalimat perkenalan dari satu objek
+function buatPerkenalan({ nama, nim }) {
+  return `Halaman ini dikembangkan oleh ${nama} (NIM: ${nim}).`;
+}
+
+// 2. Merapikan daftar keahlian menjadi satu baris teks
+const formatKeahlian = (daftar) => daftar.join(" · ");
+
+// Fungsi murni pendukung: tiap fungsi satu pekerjaan, hanya memakai argumen
+const hitungPersenAktif = (daftar) =>
+  Math.round((daftar.filter((p) => p.aktif).length / daftar.length) * 100);
+
+const hitungKlub = (daftar) => new Set(daftar.map((p) => p.klub)).size;
+
+const buatBarisTabel = (p) => `
+  <tr>
+    <td><img src="${p.foto}" alt="${p.nama}"></td>
+    <td>${p.nama}</td><td>${p.posisi}</td><td>${p.klub}</td>
+    <td><span class="lencana">${p.aktif ? "Aktif" : "Tidak aktif"}</span></td>
+  </tr>`;
+
+const buatKartu = (p) => `
+  <div class="kartu${p.sorotan ? " sorotan" : ""}">
+    <img src="${p.foto}" alt="${p.nama}">
+    <div class="kartu__isi">
+      <h3 class="kartu__judul">${p.nama}</h3>
+      <p>${p.deskripsi ?? "Belum ada deskripsi."}</p>
+    </div>
+    <div class="kartu__kaki"><span>Status: ${p.aktif ? "Aktif" : "Tidak aktif"}</span><button type="button">Detail</button></div>
+  </div>`;
+
+const buatStat = (angka, label) => `<div><strong>${angka}</strong><span>${label}</span></div>`;
+
+// ---------- Uji di Console ----------
+console.log(kalimat);
+console.log(buatPerkenalan(profil));
+console.log(buatPerkenalan({ nama: "Rizky Fabian", nim: "25523208" }));
+console.log(buatPerkenalan({ nama: "Daffa Meswara", nim: "25523209" }));
+console.log(formatKeahlian(profil.keahlian));
+console.log(formatKeahlian(["A", "B"]));
+console.log(typeof profil.nama, typeof jumlahPemain, typeof belumDibuat);
+console.log(`Email: ${email}`);
+
+console.table(profil.keahlian);
+console.table(daftarPemain);
+
+const penyerang = daftarPemain.filter((pemain) => pemain.posisi === "Penyerang");
+console.table(penyerang);
+
+const kdb = daftarPemain.find((pemain) => pemain.nama === "Kevin De Bruyne");
+console.log(kdb);
+console.log(daftarPemain.find((pemain) => pemain.nama === "Tidak Ada")); // undefined
+
+const namaSaja = daftarPemain.map((pemain) => pemain.nama);
+console.log(namaSaja.length === daftarPemain.length, namaSaja);
+
+// salinan dulu baru diurutkan — data asli tidak berubah
+const urut = [...daftarPemain].sort((a, b) => a.nama.localeCompare(b.nama));
+console.log("urut :", urut.map((p) => p.nama));
+console.log("asli :", daftarPemain.map((p) => p.nama));
+
+const salinanProfil = { ...profil, nama: "Salinan" };
+console.log(profil.nama, "|", salinanProfil.nama);
+
+// ---------- Menampilkan data ke halaman ----------
+// Membaca DOM baru dibahas penuh di Pertemuan 9; di sini cukup mengisi isi elemen.
+function isiHtml(selector, html) {
+  const elemen = document.querySelector(selector);
+  if (elemen === null) {
+    console.error(`Elemen ${selector} tidak ditemukan`);
+    return;
+  }
+  elemen.innerHTML = html;
+}
+
+document.title = `List Pemain Bola - ${profil.nama}`;
+isiHtml("#hero-teks", `${jumlahPemain} pemain pilihan dengan posisi, klub, dan statusnya, disusun rapi dalam satu halaman.`);
+isiHtml("#hero-stat",
+  buatStat(jumlahPemain, "Pemain") + buatStat(hitungKlub(daftarPemain), "Klub") + buatStat(`${hitungPersenAktif(daftarPemain)}%`, "Aktif"));
+isiHtml("#isi-slider", daftarSlider.map(
+  (g, i) => `<img src="${g.src}" alt="${g.alt}"${i > 0 ? ' loading="lazy"' : ""}>`).join(""));
+isiHtml("#isi-tabel", daftarPemain.map(buatBarisTabel).join(""));
+isiHtml("#isi-galeri",
+  daftarPemain.map(buatKartu).join("") +
+  `<a class="kartu kartu--tambah" href="#tambah-pemain"><strong>+ Tambah pemain</strong><span>Masukkan pemain favorit lainnya</span></a>`);
+isiHtml("#tentang-teks", buatPerkenalan(profil));
+isiHtml("#daftar-keahlian", profil.keahlian.map((k) => `<li>${k}</li>`).join(""));
+isiHtml("#kaki", `&copy; ${tahun} ${profil.nama} - ${profil.nim}`);
+
