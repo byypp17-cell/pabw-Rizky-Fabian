@@ -12,8 +12,8 @@ const profil = {
   // "kontak" sengaja belum diisi — dipakai untuk mendemokan ?. dan ??
 };
 
-const tahun = 2026;            // angka, bukan "2026"
-let pilihanAktif = "semua";    // let: penanda saringan yang nanti berubah
+const tahun = 2026;            
+let pilihanAktif = "semua";    
 
 const email = profil.kontak?.email ?? "belum diisi";      // aman walau kontak belum ada
 const kalimat = `Nama saya ${profil.nama}, dan saya belajar ${profil.keahlian.length} hal.`;
