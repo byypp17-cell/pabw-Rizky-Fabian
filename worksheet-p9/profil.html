@@ -52,6 +52,16 @@
 
       <article id="daftar-pemain">
         <h2>Daftar Pemain Bola Favorit</h2>
+        <section>
+  <h2>Kategori Pemain</h2>
+  <div id="filter">
+    <button data-kategori="semua" class="aktif">Semua</button>
+    <button data-kategori="penyerang">Penyerang</button>
+    <button data-kategori="gelandang">Gelandang</button>
+  </div>
+  <ul id="daftar"></ul>
+  <p id="pesan-kosong" hidden>Tidak ada pemain pada kategori itu.</p>
+</section>
         <figure>
           <div class="slider">
             <div class="slider-track" id="isi-slider"></div>
@@ -115,6 +125,6 @@
   </div>
 
   <script type="module" src="js/app.js"></script>
-  <script src="app.js" defer></script>
+  <script type="module" src="js/dom.js"></script>
 </body>
 </html>
