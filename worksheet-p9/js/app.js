@@ -58,7 +58,7 @@ const buatKartu = (p) => `
 const buatStat = (angka, label) => `<div><strong>${angka}</strong><span>${label}</span></div>`;
 
 // ---------- Lembar D: array of object (HARUS di atas bagian yang memakainya) ----------
-const daftarPemain = [
+export const daftarPemain = [
   { nama: "Lionel Messi", foto: "MessiFoto.jpg", posisi: "Penyerang", klub: "Inter Miami", aktif: true, sorotan: true,
     deskripsi: "Penyerang bintang Inter Miami asal Argentina." },
   { nama: "Kevin De Bruyne", foto: "kdbfoto.jpg", posisi: "Gelandang", klub: "Manchester City", aktif: true,
