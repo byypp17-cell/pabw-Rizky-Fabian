@@ -20,3 +20,14 @@ export async function ambilNotisia() {
     throw galat; // diteruskan ke pemanggil agar pesannya tampil di halaman
   }
 }
+
+// Versi yang mengembalikan data mentah, dipakai untuk memeriksa bentuk (Lembar A dan C).
+export async function muat() {
+  const respons = await fetch(ALAMAT);
+  console.log('status', respons.status, 'ok', respons.ok, 'type', respons.headers.get('Content-Type'));
+  if (!respons.ok) throw new Error('status ' + respons.status);
+  return respons.json();
+}
+
+// Arah sebaliknya: nilai menjadi teks JSON (bahan P11 saat mengirim data).
+export const keTeks = (nilai) => JSON.stringify(nilai);
