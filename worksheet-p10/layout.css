@@ -1,0 +1,64 @@
+/* KERANGKA HALAMAN: grid tiga baris (kepala, isi, kaki) */
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+/* NAVBAR: bersih, satu garis tipis */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.header-brand { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); min-width: 0; }
+.navbar h1 { font-size: var(--text-lg); font-weight: 800; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.navbar h1::before { content: ""; display: inline-block; width: .6rem; height: .6rem; margin-right: var(--space-2); border-radius: 50%; background-color: var(--color-accent); box-shadow: 0 0 0 2px var(--color-heading); }
+.navbar nav { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.navbar nav a { color: var(--color-muted); font-size: var(--text-sm); font-weight: 600; padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); }
+.navbar nav a:hover { background-color: var(--color-surface-2); color: var(--color-heading); text-decoration: none; }
+
+/* AREA ISI: dasar satu kolom (layar sempit). Susunan sidebar + konten
+   ditambahkan di responsif.css lewat min-width: 60rem. */
+.isi {
+  display: grid;
+  gap: var(--space-6);
+  width: min(100%, 78rem);
+  justify-self: center;
+  padding: var(--space-4);
+}
+
+.sisi  { align-self: start; }
+.utama { display: grid; gap: var(--section-gap); min-width: 0; }
+
+.utama > article { display: grid; gap: var(--space-4); align-content: start; min-width: 0; }
+
+/* KAKI HALAMAN */
+footer { display: flex; justify-content: center; padding: var(--space-6); border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: var(--text-sm); }
+
+/* HERO: kartu gelap, foto dijadikan hitam-putih lewat blend-mode */
+.hero {
+  display: grid;
+  gap: var(--space-4);
+  align-content: end;
+  min-height: 20rem;
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(100deg, rgba(9, 9, 11, .96) 30%, rgba(9, 9, 11, .35)), url("Alll.jpg") center / cover #09090b;
+  background-blend-mode: normal, luminosity;
+  box-shadow: var(--shadow-2);
+}
+.hero .hero__label { justify-self: start; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); background-color: var(--color-accent); color: var(--zinc-900); font-weight: 700; font-size: var(--text-sm); }
+.utama .hero h2 { padding: 0; color: #ffffff; font-size: clamp(2rem, 7vw, 3.75rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.02; text-transform: none; overflow-wrap: anywhere; }
+.hero p { color: var(--zinc-300); }
+.hero__stat { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); padding-top: var(--space-4); border-top: 1px solid rgba(255, 255, 255, .18); }
+.hero__stat div { display: grid; }
+.hero__stat strong { color: #ffffff; font-size: var(--text-xl); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+.hero__stat span { color: var(--zinc-300); font-size: var(--text-sm); }
