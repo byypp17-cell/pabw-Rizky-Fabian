@@ -101,3 +101,53 @@ if (form) {
     console.log("Form berhasil divalidasi dan siap dikirim!");
   });
 }
+// ---------- P10: data dari jaringan (lapisan data ada di api.js) ----------
+import { ambilNotisia, muat, keTeks } from "./api.js";
+
+const wadahNotisia = document.querySelector("#daftar-notisia");
+
+function gambarNotisia(daftar) {
+  wadahNotisia.textContent = "";
+  daftar.forEach((n) => {
+    const kartu = document.createElement("article");
+    kartu.className = "notisia" + (n.penting ? " notisia--penting" : "");
+    const judul = document.createElement("h3");
+    judul.textContent = n.judul;
+    const ringkas = document.createElement("p");
+    ringkas.textContent = n.ringkasan;
+    const meta = document.createElement("small");
+    meta.textContent = `${n.pemain} · ${n.tanggal}`;
+    kartu.append(judul, ringkas, meta);
+    wadahNotisia.append(kartu);
+  });
+}
+
+function tampilkanPesan(teks, jenis) {
+  wadahNotisia.textContent = "";
+  const p = document.createElement("p");
+  p.className = "pesan-notisia pesan-notisia--" + jenis;
+  p.setAttribute("role", jenis === "gagal" ? "alert" : "status");
+  p.textContent = teks;
+  wadahNotisia.append(p);
+}
+
+async function tampilkanNotisia() {
+  tampilkanPesan("Memuat...", "memuat");
+  try {
+    const daftar = await ambilNotisia();
+    if (daftar.length === 0) {
+      tampilkanPesan("Belum ada notisia", "kosong");
+      return;
+    }
+    gambarNotisia(daftar);
+  } catch (galat) {
+    tampilkanPesan("Gagal memuat data: " + galat.message, "gagal");
+  }
+}
+
+tampilkanNotisia();
+
+// agar bisa diuji dari Console (Lembar A, C, dan F)
+window.muat = muat;
+window.gambar = (daftar) => (daftar.length === 0 ? tampilkanPesan("Belum ada notisia", "kosong") : gambarNotisia(daftar));
+window.keTeks = keTeks;
