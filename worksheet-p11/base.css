@@ -1,0 +1,35 @@
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { scroll-padding-top: var(--space-6); scroll-behavior: smooth; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+img, video { display: block; max-width: 100%; height: auto; }
+
+/* Peralihan tema halus: warna berubah pelan saat token berganti */
+*, *::before, *::after {
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+
+h1, h2, h3 { line-height: 1.2; color: var(--color-heading); }
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+p  { max-width: 65ch; }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none; transition: none; }
+}
