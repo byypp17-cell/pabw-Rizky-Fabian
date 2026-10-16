@@ -1,0 +1,39 @@
+/* ==========================================================
+   responsif.css — Pertemuan 6: Responsif Mobile-First
+   Dimuat paling akhir. Urutan: gaya dasar (layar sempit),
+   lalu dua titik henti dengan min-width dan satuan rem.
+   Padanan nama kelas pada halaman ini:
+   .content -> .isi (sidebar + konten)   .grid -> .galeri (kartu)
+   ========================================================== */
+
+/* ---------- DASAR: berlaku di semua lebar, tanpa media query ---------- */
+.isi {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.galeri {
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.kartu { min-width: 0; }
+.hero { padding: var(--space-6); min-height: 16rem; }
+
+.sisi { position: static; }
+.menu-samping { flex-direction: row; flex-wrap: wrap; }
+
+/* ---------- TITIK HENTI 1 — tablet: galeri dua kolom ---------- */
+@media (min-width: 48rem) {
+  .isi { padding: var(--space-6); gap: var(--space-6); }
+  .hero { padding: var(--space-8); min-height: 20rem; }
+  .galeri { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- TITIK HENTI 2 — desktop: sidebar bersanding dengan konten ---------- */
+@media (min-width: 60rem) {
+  .isi { grid-template-columns: 16rem minmax(0, 1fr); }
+  .sisi { position: sticky; top: var(--space-4); }
+  .menu-samping { flex-direction: column; flex-wrap: nowrap; }
+  .galeri { grid-template-columns: repeat(3, 1fr); }
+}
