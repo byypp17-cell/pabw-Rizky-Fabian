@@ -1,7 +1,4 @@
-// ============================================================
-// state.js — [Lembar B & C] satu-satunya objek keadaan dan fungsi pengubahnya.
-// Setiap perubahan lewat fungsi bernama di sini, dan fungsi itu yang memanggil render.
-// ============================================================
+
 import { daftarPemain } from "./data.js";
 import { ambilNotisia } from "./api.js";
 import { render, tandaiFilter, tampilkanPesan, renderNotisia } from "./dom.js";
@@ -15,11 +12,11 @@ export const state = {
 
 const KATEGORI_VALID = ["semua", "penyerang", "gelandang"];
 
-// ---------- [Lembar D.1] penyimpanan di localStorage ----------
+
 const KUNCI = "pabw-p11";
 const VERSI = 2;
 
-// [Lembar D.2] nilai bawaan dipakai bila simpanan belum ada (getItem mengembalikan null)
+
 const NILAI_BAWAAN = { kategoriAktif: "semua" };
 
 // [Lembar E.4] yang TIDAK disimpan: token, kata sandi, dan data pribadi (tidak terenkripsi di peramban).
